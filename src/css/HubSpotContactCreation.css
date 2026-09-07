@@ -1,0 +1,496 @@
+/* HubSpot Contact Creation Page Styles */
+
+.hubspot-contact-container {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #2c3e50;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* HubSpot Top Navigation Bar */
+.hubspot-top-nav {
+    background: white;
+    border-bottom: 1px solid #e1e5e9;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.top-nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.breadcrumb-item {
+    color: #7c98b6;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-item:hover {
+    color: #2c3e50;
+}
+
+.breadcrumb-item.active {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.breadcrumb-separator {
+    color: #cbd5e0;
+}
+
+.top-nav-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-secondary {
+    background: white;
+    border: 1px solid #e1e5e9;
+    color: #7c98b6;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #f8f9fa;
+    border-color: #cbd5e0;
+}
+
+.btn-primary {
+    background: #ff7a59;
+    border: 1px solid #ff7a59;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #e65a3f;
+    border-color: #e65a3f;
+}
+
+.btn-primary:disabled {
+    background: #cbd5e0;
+    border-color: #cbd5e0;
+    cursor: not-allowed;
+}
+
+/* Main Content Area */
+.hubspot-main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Left Sidebar - Contact Properties */
+.left-sidebar {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.sidebar-section {
+    padding: 32px;
+}
+
+.section-header {
+    margin-bottom: 32px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 8px 0;
+}
+
+.section-header p {
+    font-size: 14px;
+    color: #7c98b6;
+    margin: 0;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #2c3e50;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff7a59;
+    box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a0aec0;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Primary Field Styling (Email) */
+.primary-field {
+    margin-bottom: 32px;
+}
+
+.primary-input {
+    border-color: #ff7a59 !important;
+    background-color: #fff5f4 !important;
+}
+
+.field-help {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #7c98b6;
+}
+
+.field-help svg {
+    color: #7c98b6;
+}
+
+/* Form Rows */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Address Section */
+.address-section {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid #e1e5e9;
+}
+
+.address-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 24px 0;
+}
+
+/* Marketing Section */
+.marketing-section {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid #e1e5e9;
+}
+
+.marketing-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 24px 0;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Activity Feed */
+.activity-feed {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.feed-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.feed-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #ff7a59;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+.feed-content {
+    padding: 24px;
+}
+
+.feed-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.feed-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #f0f9ff;
+    border-radius: 50%;
+    color: #0369a1;
+    flex-shrink: 0;
+}
+
+.feed-text p {
+    font-size: 14px;
+    color: #2c3e50;
+    margin: 0 0 4px 0;
+}
+
+.feed-time {
+    font-size: 12px;
+    color: #7c98b6;
+}
+
+.feed-placeholder {
+    text-align: center;
+    padding: 32px 16px;
+    color: #7c98b6;
+}
+
+.placeholder-icon {
+    margin-bottom: 16px;
+    color: #cbd5e0;
+}
+
+.feed-placeholder p {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+}
+
+.feed-placeholder span {
+    font-size: 12px;
+}
+
+/* Related Records */
+.related-records {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.records-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.records-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.records-content {
+    padding: 24px;
+}
+
+.record-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.record-item:hover {
+    background-color: #f8f9fa;
+}
+
+.record-item:last-child {
+    margin-bottom: 0;
+}
+
+.record-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    color: #7c98b6;
+    flex-shrink: 0;
+}
+
+.record-text p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin: 0 0 2px 0;
+}
+
+.record-text span {
+    font-size: 12px;
+    color: #7c98b6;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .right-sidebar {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hubspot-main-content {
+        padding: 16px;
+    }
+    
+    .sidebar-section {
+        padding: 24px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .top-nav-content {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+    
+    .top-nav-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+/* Loading States */
+.form-group input:disabled,
+.form-group select:disabled,
+.form-group textarea:disabled {
+    background-color: #f8f9fa;
+    color: #a0aec0;
+    cursor: not-allowed;
+}
+
+/* Error States */
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #ff4757;
+}
+
+.form-group.error .error-message {
+    color: #ff4757;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Success States */
+.form-group.success input,
+.form-group.success select,
+.form-group.success textarea {
+    border-color: #2ed573;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.left-sidebar,
+.right-sidebar {
+    animation: fadeIn 0.3s ease-out;
+} 

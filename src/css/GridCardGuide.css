@@ -1,0 +1,317 @@
+/* GridCardGuide Component Styles */
+
+/* Backdrop */
+.guide-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+    backdrop-filter: blur(2px);
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Allow scrolling on body when guide is active */
+body.guide-active {
+    overflow: auto !important;
+    position: relative !important;
+}
+
+/* Ensure the backdrop doesn't block scrolling */
+.guide-backdrop {
+    pointer-events: none;
+}
+
+/* Only block pointer events on the tooltip itself */
+.guide-tooltip {
+    pointer-events: auto;
+}
+
+/* Highlighted element */
+.guide-highlight {
+    position: relative;
+    z-index: 9999 !important;
+    box-shadow: 0 0 0 4px #007bff, 0 0 20px rgba(0, 123, 255, 0.5) !important;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Tooltip container */
+.guide-tooltip {
+    position: fixed;
+    z-index: 10000;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    min-width: 300px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border: 1px solid #e1e5e9;
+}
+
+/* Tooltip header */
+.guide-tooltip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 0 20px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 15px;
+}
+
+.guide-tooltip-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.guide-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.guide-close:hover {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+/* Tooltip content */
+.guide-tooltip-content {
+    padding: 0 20px 15px 20px;
+}
+
+.guide-tooltip-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #495057;
+}
+
+/* Tooltip footer */
+.guide-tooltip-footer {
+    padding: 15px 20px 20px 20px;
+    border-top: 1px solid #f0f0f0;
+    background-color: #f8f9fa;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Progress bar */
+.guide-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.guide-progress-bar {
+    flex: 1;
+    height: 6px;
+    background-color: #e9ecef;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.guide-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.guide-progress-text {
+    font-size: 12px;
+    color: #6c757d;
+    font-weight: 500;
+    min-width: 60px;
+}
+
+/* Action buttons */
+.guide-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.guide-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.guide-btn-skip {
+    background-color: transparent;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+}
+
+.guide-btn-skip:hover {
+    background-color: #f8f9fa;
+    color: #495057;
+    border-color: #adb5bd;
+}
+
+.guide-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.guide-btn-prev {
+    background-color: #6c757d;
+    color: white;
+}
+
+.guide-btn-prev:hover {
+    background-color: #5a6268;
+}
+
+.guide-btn-prev:disabled {
+    background-color: #e9ecef;
+    color: #adb5bd;
+    cursor: not-allowed;
+}
+
+.guide-btn-next {
+    background-color: #007bff;
+    color: white;
+}
+
+.guide-btn-next:hover {
+    background-color: #0056b3;
+}
+
+/* Keyboard hint */
+.guide-keyboard-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #6c757d;
+    justify-content: center;
+    padding-top: 8px;
+    border-top: 1px solid #e9ecef;
+}
+
+.guide-keyboard-hint i {
+    font-size: 14px;
+}
+
+.guide-keyboard-hint kbd {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 11px;
+    font-family: monospace;
+    color: #495057;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .guide-tooltip {
+        max-width: 90vw;
+        min-width: 280px;
+        margin: 0 10px;
+    }
+    
+    .guide-tooltip-header h3 {
+        font-size: 16px;
+    }
+    
+    .guide-tooltip-content p {
+        font-size: 13px;
+    }
+    
+    .guide-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    
+    .guide-nav {
+        justify-content: space-between;
+    }
+    
+    .guide-btn {
+        flex: 1;
+    }
+}
+
+/* Animation for tooltip appearance */
+@keyframes guideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.guide-tooltip {
+    animation: guideFadeIn 0.3s ease-out;
+}
+
+/* Focus styles for accessibility */
+.guide-btn:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.guide-close:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .guide-backdrop {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    
+    .guide-highlight {
+        box-shadow: 0 0 0 4px #000, 0 0 20px rgba(0, 0, 0, 0.8) !important;
+    }
+    
+    .guide-tooltip {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .guide-tooltip,
+    .guide-highlight,
+    .guide-progress-fill {
+        transition: none;
+    }
+    
+    .guide-tooltip {
+        animation: none;
+    }
+} 

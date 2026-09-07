@@ -1,0 +1,465 @@
+/* Global Layout Styles */
+
+/* ===== GLOBAL RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    line-height: 1.5;
+    display: block;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===== MAIN CONTAINER LAYOUT ===== */
+.main-container {
+    display: flex;
+    min-height: calc(100vh - 64px);
+}
+
+/* ===== SIDEBAR ===== */
+/* 
+ * SIDEBAR WIDTH CONTROL SYSTEM
+ * To change sidebar width across the entire application:
+ * 1. Modify these CSS custom properties below
+ * 2. All pages will automatically use the new width
+ * 3. No need to update individual page CSS files
+ * 
+ * Current settings:
+ * - Desktop: 280px
+ * - Tablet (1200px): 254px  
+ * - Mobile (768px): 228px
+ */
+:root {
+    --sidebar-width: 213px;
+    --sidebar-width-tablet: 187px;
+    --sidebar-width-mobile: 167px;
+}
+
+.sidebar {
+    width: var(--sidebar-width) !important;
+    background: white;
+    border-right: 2px solid #006400;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    color: #2c3e50;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 4px 0 12px rgba(0, 100, 0, 0.15);
+}
+
+.sidebar-header {
+    padding: 24px 20px;
+    border-bottom: 1px solid #e1e5e9;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    flex-shrink: 0;
+}
+
+.sidebar-logo {
+    max-width: 60px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-logo:hover {
+    transform: scale(1.02);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.sidebar-brand-text {
+    font-size: 24px;
+    font-weight: 900;
+    color: #006400;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -1px;
+}
+
+.sidebar-logo-text {
+    text-align: center;
+    padding: 8px;
+}
+
+.sidebar-logo-text h1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: #006400;
+    margin: 0;
+    text-align: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.sidebar-logo-text p {
+    font-size: 20px;
+    color: #6c757d;
+    margin: 8px 0 0 0;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.sidebar-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    margin: 0;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    color: #6c757d;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 14px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-nav a:hover {
+    background-color: #e6f3e6;
+    color: #006400;
+    border-left-color: #006400;
+}
+
+.sidebar-nav a.active {
+    background-color: #006400;
+    color: white;
+    border-left-color: #004d00;
+    font-weight: 600;
+}
+
+.sidebar-nav i {
+    width: 16px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* ===== MAIN CONTENT AREA ===== */
+.content {
+    flex: 1;
+    padding: 24px;
+    /* Apply gradient background from bottom-left to top-right (45 degrees) */
+    background: linear-gradient(45deg, #D5E79E, #94A65D, #006400);
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    height: 100vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+main {
+    flex: 1;
+    padding: 24px;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    overflow-y: auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+/* ===== CONTENT HEADER ===== */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.header-left h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.header-left p {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: var(--sidebar-width-tablet) !important;
+    }
+    
+    .content {
+        margin-left: var(--sidebar-width-tablet);
+        width: calc(100% - var(--sidebar-width-tablet));
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: var(--sidebar-width-mobile) !important;
+    }
+    
+    .content {
+        margin-left: var(--sidebar-width-mobile);
+        width: calc(100% - var(--sidebar-width-mobile));
+    }
+    
+    .content-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .header-right {
+        align-self: flex-end;
+    }
+    
+    .sidebar-logo {
+        max-width: 40px;
+    }
+    
+    .logo-container {
+        gap: 8px;
+    }
+    
+    .sidebar-brand-text {
+        font-size: 18px;
+    }
+    
+    .sidebar-header {
+        padding: 20px 12px 16px 12px;
+        margin: 0 -4px 24px -4px;
+    }
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #006400;
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #004d00;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+} 
+
+/* ===== SIDEBAR PROFILE SECTION ===== */
+.sidebar-profile {
+    padding: 16px 20px;
+    background: white;
+    border-top: 1px solid #e1e5e9;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #006400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-email {
+    font-size: 12px;
+    color: #6c757d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-logout-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #006400 0%, #004d00 100%);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.profile-logout-btn:hover {
+    background: linear-gradient(135deg, #004d00 0%, #003300 100%);
+    transform: scale(1.05);
+}
+
+/* Remove old sidebar adjustments */ 
+
+/* ===== GLOBAL TABLE HEADER STYLES ===== */
+/* Global override for all table headers across the application */
+.hubspot-table thead,
+.leads-table thead,
+.clients-table thead,
+.reports-table thead,
+.modules-table thead {
+    background-color: #C2E7DA;
+}
+
+.hubspot-table th,
+.leads-table th,
+.clients-table th,
+.reports-table th,
+.modules-table th {
+    background-color: #C2E7DA ;
+}
+
+/* Global styling for bg-gray-50 class on table headers */
+thead.bg-gray-50 {
+    background-color: #C2E7DA ;
+}
+
+th.bg-gray-50 {
+    background-color: #C2E7DA;
+}
+
+/* Override Facilitator.css table header styles */
+.table-header-concrete,
+table thead th,
+th {
+    background-color: #C2E7DA !important;
+}
+
+/* ===== GLOBAL ICON SIZE FIXES ===== */
+/* Ensure proper icon sizing across all pages */
+.fas, .fa, .far, .fab {
+    font-size: 16px !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+}
+
+/* Specific icon size overrides for different contexts */
+.btn .fas, .btn .fa, .btn .far, .btn .fab {
+    font-size: 14px !important;
+}
+
+.sidebar .fas, .sidebar .fa, .sidebar .far, .sidebar .fab {
+    font-size: 16px !important;
+}
+
+
+
+.header-actions .fas, .header-actions .fa, .header-actions .far, .header-actions .fab {
+    font-size: 14px !important;
+}
+
+/* Ensure icons in buttons maintain proper sizing */
+button .fas, button .fa, button .far, button .fab {
+    font-size: inherit !important;
+}
+
+/* Fix for any icons that might be affected by transform scale */
+.fas, .fa, .far, .fab {
+    transform: none !important;
+}
+
+/* Ensure icons in navigation maintain proper size */
+.nav-item .fas, .nav-item .fa, .nav-item .far, .nav-item .fab {
+    font-size: 16px !important;
+}
+
+/* Fix for icons in tables */
+.table .fas, .table .fa, .table .far, .table .fab {
+    font-size: 14px !important;
+}
+
+/* Fix for icons in cards and metrics */
+.card .fas, .card .fa, .card .far, .card .fab,
+.metric-card .fas, .metric-card .fa, .metric-card .far, .metric-card .fab {
+    font-size: 16px !important;
+}
